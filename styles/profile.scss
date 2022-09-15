@@ -1,0 +1,20 @@
+.profile {
+  .profile-wrapper {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    img {
+      border-radius: 50% !important;
+    }
+  }
+  .btn-follow {
+    min-height: 40px;
+    background-color: red;
+  }
+  .btn-tab {
+    min-width: 150px;
+    border: 1px solid black;
+    border-radius: 32px;
+  }
+}
