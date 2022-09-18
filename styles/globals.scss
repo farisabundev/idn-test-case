@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+@import "variables";
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Lato", sans-serif !important;
+}
+
+.fs-11 {
+  font-size: 11px;
+}
+.fs-12 {
+  font-size: 12px;
+}
+.fs-16 {
+  font-size: 16px;
+}
+
+.fw-thin {
+  font-weight: 100;
+}
+.fw-light {
+  font-weight: 300;
+}
+.fw-bold {
+  font-weight: 700;
+}
+.fw-bold-900 {
+  font-weight: 900;
+}
+
+.fc-red {
+  color: $primary;
+}
+
+.fc-grey {
+  color: $grey;
+}
+
+.fc-white {
+  color: $white;
+}
+
+.share-btn {
+  background: none !important;
+  border: none !important;
+}

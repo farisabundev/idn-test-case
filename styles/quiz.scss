@@ -1,0 +1,30 @@
+@import "variables";
+
+.quiz-card {
+  .thumbnail-wrapper {
+    img {
+      width: 100% !important;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+  }
+
+  .category {
+    padding-top: 12px;
+    font-size: 12px;
+    color: $grey;
+  }
+
+  .title {
+    font-weight: 900;
+    font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    margin-bottom: 8px;
+  }
+
+
+}

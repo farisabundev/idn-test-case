@@ -1,20 +1,43 @@
-.profile {
-  .profile-wrapper {
-    display: inline-flex;
-    flex-wrap: wrap;
-    gap: 15px;
+@import "variables";
 
-    img {
-      border-radius: 50% !important;
-    }
+.profile-wrapper {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 16px;
+
+  img {
+    border-radius: 50% !important;
   }
-  .btn-follow {
-    min-height: 40px;
-    background-color: red;
+}
+.btn-follow {
+  min-height: 48px !important;
+  background-color: $primary !important;
+  color: $white !important;
+  border-radius: 8px !important;
+
+  &:hover {
+    background-color: rgba($color: $primary_darker, $alpha: 1) !important;
+    color: $white_darker !important;
   }
+}
+
+.profile {
   .btn-tab {
-    min-width: 150px;
-    border: 1px solid black;
+    width: 100%;
     border-radius: 32px;
+    border: 1px solid $silver;
+    font-weight: 700;
+    font-size: 12px;
+
+    &:hover {
+      background-color: rgba($color: $white_darker, $alpha: 1) !important;
+      color: $primary !important;
+    }
+
+    &.active {
+      background-color: $primary_lighter !important;
+      border-color: $primary_lighter !important;
+      color: $primary !important;
+    }
   }
 }

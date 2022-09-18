@@ -2,13 +2,13 @@ import type { NextPage } from 'next'
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+
+import { INewsData } from '../../types';
 import ProfileNews from '../../components/profile/News';
 import ProfileTabs from '../../components/profile/Tabs';
-import { INewsData } from '../../types';
 
-const ProfilePage: NextPage = (props) => {
+const ProfileNewsPage: NextPage = () => {
   const router = useRouter();
-
   const [selectedTab, setSelectedTab] = useState('NEWS');
   const [allNews, setAllNews] = useState(Array<INewsData>);
 
@@ -20,14 +20,15 @@ const ProfilePage: NextPage = (props) => {
     try {
       const response = await fetch('/api/news');
       const data = await response.json();
+      const result = [...allNews, ...data.data];
 
-      setAllNews(data);
+      setAllNews(result);
     } catch (error) {
       throw error;
     }
   };
 
-  const handleChangeTab = (val: string) => {
+  const changeRoute = (val: string) => {
     setSelectedTab(val);
 
     switch (val) {
@@ -46,14 +47,14 @@ const ProfilePage: NextPage = (props) => {
   return (
     <>
       <Head>
-        <title>Profile</title>
+        <title>Profile | News</title>
       </Head>
       <div className='profile'>
-        <ProfileTabs selectedTab={selectedTab} setSelectedTab={(val:string) => handleChangeTab(val)}/>
-        <ProfileNews dataNews={allNews} />  
+        <ProfileTabs selectedTab={selectedTab} setSelectedTab={(val:string) => changeRoute(val)}/>
+        <ProfileNews dataNews={allNews} fetchNews={() => fetchNews()}/>
       </div>
     </>
   )
 }
 
-export default ProfilePage;
+export default ProfileNewsPage;
