@@ -1,6 +1,8 @@
-import { ILivestreamData } from '../../types';
-import LivestreamCard from './card/LivestreamCard';
 import InfiniteScroll from "react-infinite-scroll-component";
+import { ILivestreamData } from '../../types';
+
+import LivestreamCard from './card/LivestreamCard';
+import SkeletonLivestream from '../skeleton/Livestream';
 
 const ProfileLivestream = (props: any) => {
   return(
@@ -10,7 +12,7 @@ const ProfileLivestream = (props: any) => {
           dataLength={props.dataLivestreams.length}
           next={() => props.fetchLivestream()}
           hasMore={true}
-          loader={<h4>Loading...</h4>}
+          loader={<SkeletonLivestream />}
           >
           <div className='row'>
             {props.dataLivestreams.map((each: ILivestreamData, index: number) => (
@@ -19,7 +21,7 @@ const ProfileLivestream = (props: any) => {
           </div>
         </InfiniteScroll>
         :
-        <h4>Loading...</h4>
+        <SkeletonLivestream />
       }
     </div>
   )

@@ -1,10 +1,13 @@
 import '../styles/globals.scss';
+import '../styles/skeleton.scss';
 import '../styles/profile.scss';
 import '../styles/news.scss';
 import '../styles/livestream.scss';
 import '../styles/quiz.scss';
 
 import 'bootstrap/dist/css/bootstrap.css';
+import 'react-loading-skeleton/dist/skeleton.css';
+
 import type { AppProps } from 'next/app';
 
 import { useEffect, useState } from 'react';
